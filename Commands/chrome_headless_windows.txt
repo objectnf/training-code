@@ -1,0 +1,5 @@
+@REM Chrome可安装在Program Files下（用企业部署MSI）
+cd C:\Program Files (x86)\Google\Chrome\Application
+
+@REM 尝试获取DOM并存为html文件
+chrome.exe --headless --disable-gpu --enable-logging --dump-dom https://www.baidu.com > baidu.html

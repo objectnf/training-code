@@ -1,0 +1,1 @@
+pyinstaller -F "basic - syntaxSugar01.py"

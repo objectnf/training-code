@@ -1,0 +1,13 @@
+@REM 检查python包是否存在依赖冲突
+pip install pip-conflict-checker
+pipconflictchecker
+
+@REM 批量升级所有可升级的Python包
+pip list --outdated | awk "{if (NR>2) {print $1}}" | xargs -i pip install --upgrade {}
+
+@REM 生成Python包列表
+pip freeze > requirements.txt
+
+@REM 没有pip？可以一个脚本安装
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1634230412 source:d:\编程与比赛\training-code\datastructure\1_linearlist\1_staticlist\staticlist.cpp
+	"StaticList.hpp"
+
+1634229714 d:\编程与比赛\training-code\datastructure\1_linearlist\1_staticlist\staticlist.hpp
+	<iostream>
+	<cstdlib>
+

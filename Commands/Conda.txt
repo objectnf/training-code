@@ -1,0 +1,7 @@
+@REM 在指定位置创建Conda环境
+D:\Miniconda3\condabin\conda.bat create --prefix=..\..\Conda_env_3 python=3.7
+
+@REM 激活Conda环境
+D:\Miniconda3\condabin\activate.bat ..\..\Conda_env_3
+@REM 或者：
+D:\Miniconda3\condabin\conda.bat activate ..\..\Conda_env_3

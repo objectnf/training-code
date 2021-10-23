@@ -1,0 +1,53 @@
+/* 
+写在前面：Autodesk Maya脚本语言，
+类bash语言，覆盖Maya大多数基础功能
+高级功能需要使用Python2结合Maya特有的Module。
+*/
+
+// 单行注释
+
+/* 
+  多行注释
+  ！！！
+*/
+
+// 变量定义
+$a = 1;
+$b = 10*100;
+
+// 输出语句
+print($a + $b);
+
+// 指定类型的变量定义
+int $c = 10;
+
+// float型数组
+float $nums[5] = {0.1, 0.3, 0.2, 0.1, 0.4};
+
+// 向量
+vector $num_vec = <<1.4, 8.8, 4.6>>;
+
+// 空矩阵
+matrix $tmp_matrix[3][4];
+
+// 单独的表达式不可作为语句
+// 3+5;
+
+// for 循环和 if 语句
+for (; $a != $c; $a++) // 逻辑符和C基本一致
+{
+    if ($a == 5)
+    {
+        print("A is 5!\n");
+    }; // 按照规则，大括号后最好也加分号
+}
+
+$d = 2;
+if ($d == 1)
+    print("D is 1!\n");
+else if ($d == 2) // 同 C 的用法
+    print("D is 2!\n");
+else
+    print("D is nothing!\n");
+
+

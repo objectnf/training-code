@@ -1,0 +1,17 @@
+# File Types
+*.exe
+*.o
+*.elf
+*.so
+
+# Work Dirs
+.idea/
+.vscode/
+
+# Compile Temp Files
+obj/
+
+# Dependencies
+node_modules/
+vendor/
+venv/

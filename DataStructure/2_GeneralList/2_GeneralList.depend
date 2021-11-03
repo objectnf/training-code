@@ -1,10 +1,19 @@
 # depslib dependency file v1.0
-1635946749 source:d:\编程与比赛\training-code\datastructure\2_generallist\main.cpp
+1635949086 source:d:\编程与比赛\training-code\datastructure\2_generallist\main.cpp
 	"GeneralList.h"
 
-1635946576 d:\编程与比赛\training-code\datastructure\2_generallist\generallist.h
+1635948915 d:\编程与比赛\training-code\datastructure\2_generallist\generallist.h
 	<iostream>
 
-1635947031 source:d:\编程与比赛\training-code\datastructure\2_generallist\generallist.cpp
+1635948898 source:d:\编程与比赛\training-code\datastructure\2_generallist\generallist.cpp
+	"GeneralList.h"
+
+1635948898 source:d:\training-code\datastructure\2_generallist\generallist.cpp
+	"GeneralList.h"
+
+1635948915 d:\training-code\datastructure\2_generallist\generallist.h
+	<iostream>
+
+1635949086 source:d:\training-code\datastructure\2_generallist\main.cpp
 	"GeneralList.h"
 

@@ -6,22 +6,12 @@ int main()
 {
     ListType* gList = nullptr;
     int err = 0;
-    err = construct_list(&gList);
-    if (err) {
-        cout << "广义表初始化错误"<<endl;
-        return 1;
-    }
-    else {
-        cout << "广义表初始化成功" << endl;
-    }
+    construct_list(&gList);
 
-    err = destroy_list(&gList);
-    if (err) {
-        cout << "广义表销毁失败" << endl;
-        return 1;
-    }
-    else {
-        cout << "广义表销毁成功" << endl;
-    }
+    // 此处可添加输入处理代码
+    int atomData = 100;
+    add_element_to_head(gList, 1, (void *)&atomData);
+
+    destroy_list(&gList);
     return 0;
 }

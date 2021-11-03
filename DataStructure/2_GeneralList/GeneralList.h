@@ -23,9 +23,11 @@ typedef struct List {
 }
 ListType;
 
-int construct_list(ListType **gList);
+void construct_list(ListType **gList);
 bool check_list_empty(ListType *gList);
-int destroy_list(ListType **gList);
+void destroy_list(ListType **gList);
 int get_list_length(ListType **gList);
+void add_element_to_head(ListType *gList, int isAtom, void *nodeData);
+NodeType* get_list_head(ListType *gList);
 
 #endif // GENERALLIST_H_INCLUDED

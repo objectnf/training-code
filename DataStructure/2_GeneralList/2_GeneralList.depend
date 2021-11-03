@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1635945534 source:d:\编程与比赛\training-code\datastructure\2_generallist\main.cpp
+	"GeneralList.h"
+
+1635945442 d:\编程与比赛\training-code\datastructure\2_generallist\generallist.h
+	<iostream>
+
+1635945425 source:d:\编程与比赛\training-code\datastructure\2_generallist\generallist.cpp
+	"GeneralList.h"
+

@@ -1,27 +1,47 @@
 #include "GeneralList.h"
 
-int construct_list(ListType **list)
+// 按一般考试要求，忽略const和const_cast，有需求可自行添加
+int construct_list(ListType **gList)
 {
-    *list = new ListType{0, nullptr};
+    *gList = new ListType{0, nullptr};
     return 0;
 }
 
-bool check_list_empty(const ListType *list)
+bool check_list_empty(ListType *gList)
 {
-    if (list->length == 0) {
+    if (gList->length == 0) {
         return true;
     }
     return false;
 }
 
-int destroy_list(ListType **list)
+int destroy_list(ListType **gList)
 {
-    delete *list;
+    delete *gList;
     return 0;
 }
 
-int get_list_length(const ListType *list)
+int get_list_length(ListType *gList)
 {
-    return list->length;
+    return gList->length;
+}
+
+int add_element_to_head(ListType **gList, int isAtom, void *nodeData)
+{
+    NodeType *node = new NodeType();
+    if (isAtom) {
+        node->type = false;
+        node->nodeContent.atom = *(int *)nodeData;
+        node->next = nullptr;
+    }
+    else {
+        node->type = true;
+        node->nodeContent.nodePointer = (NodeType *)nodeData;
+        node->next = nullptr;
+    }
+
+
+
+    return 0;
 }
 

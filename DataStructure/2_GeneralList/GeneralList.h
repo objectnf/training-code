@@ -23,9 +23,9 @@ typedef struct List {
 }
 ListType;
 
-int construct_list(ListType **list);
-bool check_list_empty(const ListType *list);
-int destroy_list(ListType **list);
-int get_list_length(const ListType *list);
+int construct_list(ListType **gList);
+bool check_list_empty(ListType *gList);
+int destroy_list(ListType **gList);
+int get_list_length(ListType **gList);
 
 #endif // GENERALLIST_H_INCLUDED

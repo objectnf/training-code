@@ -29,5 +29,6 @@ void destroy_list(ListType **gList);
 int get_list_length(ListType **gList);
 void add_element_to_head(ListType *gList, int isAtom, void *nodeData);
 NodeType* get_list_head(ListType *gList);
+ListType* get_list_tail(ListType *gList);
 
 #endif // GENERALLIST_H_INCLUDED

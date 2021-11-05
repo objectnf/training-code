@@ -38,7 +38,7 @@ int get_top_element(Stack *linearStack, ElementType *top)
     if (check_stack_empty(linearStack)) {
         return -1;
     }
-    *top = linearStack->data[linearStack->top];
+    *top = linearStack->data[linearStack->top - 1];
     return 0;
 }
 
@@ -48,14 +48,19 @@ int push_element(Stack *linearStack, ElementType data)
     if (check_stack_full(linearStack)) {
         return -1;
     }
-
+    linearStack->data[linearStack->top] = data;
+    linearStack->top ++;
+    return 0;
 }
 
-// 出栈
-int pop_element(Stack *linearStack)
+// 出栈，按考试要求返回栈顶元素
+int pop_element(Stack *linearStack, ElementType *top)
 {
     if (check_stack_empty(linearStack)) {
         return -1;
     }
+    linearStack->top --;
+    *top = linearStack->data[linearStack->top];
+    return 0;
 }
 

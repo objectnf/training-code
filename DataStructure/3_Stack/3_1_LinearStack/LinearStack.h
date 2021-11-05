@@ -17,6 +17,8 @@ Stack* construct_stack();
 void destroy_stack(Stack **linearStack);
 bool check_stack_empty(Stack *linearStack);
 bool check_stack_full(Stack *linearStack);
-int get_top_element(Stack *linearStack, ElementType *top)
+int get_top_element(Stack *linearStack, ElementType *top);
+int push_element(Stack *linearStack, ElementType data);
+int pop_element(Stack *linearStack, ElementType *top);
 
 #endif // LINEARSTACK_H_INCLUDED

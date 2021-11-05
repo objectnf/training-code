@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1636119752 source:d:\training-code\datastructure\3_stack\3_1_linearstack\main.cpp
+1636123630 source:d:\training-code\datastructure\3_stack\3_1_linearstack\main.cpp
 	"LinearStack.h"
 
-1636119745 d:\training-code\datastructure\3_stack\3_1_linearstack\linearstack.h
+1636123370 d:\training-code\datastructure\3_stack\3_1_linearstack\linearstack.h
 	<iostream>
 
-1636119734 source:d:\training-code\datastructure\3_stack\3_1_linearstack\linearstack.cpp
+1636123468 source:d:\training-code\datastructure\3_stack\3_1_linearstack\linearstack.cpp
 	"LinearStack.h"
 

@@ -3,13 +3,15 @@
 
 #include <iostream>
 
-#define ElementType int
+typedef int ElementType;
 
 // 按一般考试要求，推荐显式设置别名
-typedef struct Node {
+typedef struct Node
+{
     bool type;
     Node *next;
-    union {
+    union
+    {
         ElementType atom;
         Node *nodePointer;
     }
@@ -17,7 +19,8 @@ typedef struct Node {
 }
 NodeType;
 
-typedef struct List {
+typedef struct List
+{
     int length;
     Node *head;
 }

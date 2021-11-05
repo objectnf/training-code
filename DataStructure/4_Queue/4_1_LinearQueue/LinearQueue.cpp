@@ -3,7 +3,7 @@
 // 创建
 Queue* construct_queue()
 {
-    Queue *linearQueue = new Queue{{0}, 0};
+    Queue *linearQueue = new Queue{{0}, 0, 0};
     return linearQueue;
 }
 
@@ -17,22 +17,22 @@ void destroy_queue(Queue **linearQueue)
 // 判空
 bool check_queue_empty(Queue *linearQueue)
 {
-    if (linearQueue->top) {
-        return false;
-    }
-    return true;
-}
-
-// 判满
-bool check_queue_full(Queue *linearQueue)
-{
-    if (linearQueue->top == MAX_QUEUE_SIZE - 1) {
+    if (linearQueue->length == 0) {
         return true;
     }
     return false;
 }
 
-// 获取栈顶元素
+// 判满
+bool check_queue_full(Queue *linearQueue)
+{
+    if (linearQueue->head == linearQueue->tail) {
+        return true;
+    }
+    return false;
+}
+
+// 获取队头元素
 int get_top_element(Queue *linearQueue, ElementType *top)
 {
     if (check_queue_empty(linearQueue)) {
@@ -42,7 +42,7 @@ int get_top_element(Queue *linearQueue, ElementType *top)
     return 0;
 }
 
-// 入栈
+// 尾入队
 int push_element(Queue *linearQueue, ElementType data)
 {
     if (check_queue_full(linearQueue)) {
@@ -53,7 +53,7 @@ int push_element(Queue *linearQueue, ElementType data)
     return 0;
 }
 
-// 出栈，按考试要求返回栈顶元素
+// 头出队
 int pop_element(Queue *linearQueue, ElementType *top)
 {
     if (check_queue_empty(linearQueue)) {

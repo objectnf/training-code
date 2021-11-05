@@ -9,7 +9,9 @@ typedef int ElementType;
 typedef struct QueueStruct
 {
     ElementType data[MAX_QUEUE_SIZE];
-    int top;
+    int head;
+    int tail;
+    int length;
 }
 Queue;
 

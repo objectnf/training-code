@@ -2,3 +2,9 @@
 1584205420 source:d:\training-code\datastructure\4_queue\4_1_linearqueue\main.cpp
 	<iostream>
 
+1636127695 source:d:\training-code\datastructure\4_queue\4_1_linearqueue\linearqueue.cpp
+	"LinearQueue.h"
+
+1636126848 d:\training-code\datastructure\4_queue\4_1_linearqueue\linearqueue.h
+	<iostream>
+

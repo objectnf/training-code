@@ -33,12 +33,12 @@ bool check_queue_full(Queue *linearQueue)
 }
 
 // 获取队头元素
-int get_top_element(Queue *linearQueue, ElementType *top)
+int get_top_element(Queue *linearQueue, ElementType *head)
 {
     if (check_queue_empty(linearQueue)) {
         return -1;
     }
-    *top = linearQueue->data[linearQueue->top - 1];
+    *head = linearQueue->data[linearQueue->head];
     return 0;
 }
 
@@ -48,18 +48,18 @@ int push_element(Queue *linearQueue, ElementType data)
     if (check_queue_full(linearQueue)) {
         return -1;
     }
-    linearQueue->data[linearQueue->top] = data;
-    linearQueue->top ++;
+    linearQueue->data[linearQueue->tail] = data;
+    linearQueue->tail ++;
     return 0;
 }
 
 // 头出队
-int pop_element(Queue *linearQueue, ElementType *top)
+int pop_element(Queue *linearQueue, ElementType *head)
 {
     if (check_queue_empty(linearQueue)) {
         return -1;
     }
-    linearQueue->top --;
-    *top = linearQueue->data[linearQueue->top];
+    *head = linearQueue->data[linearQueue->head];
+    linearQueue->head = (linearQueue->head + 1) % MAX_QUEUE_SIZE;
     return 0;
 }

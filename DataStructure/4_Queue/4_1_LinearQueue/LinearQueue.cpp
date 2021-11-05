@@ -1,20 +1,20 @@
 #include "LinearQueue.h"
 
-// ´´½¨
+// åˆ›å»º
 Queue* construct_queue()
 {
     Queue *linearQueue = new Queue{{0}, 0, 0};
     return linearQueue;
 }
 
-// Ïú»Ù
+// é”€æ¯
 void destroy_queue(Queue **linearQueue)
 {
     delete *linearQueue;
     return;
 }
 
-// ÅĞ¿Õ
+// åˆ¤ç©º
 bool check_queue_empty(Queue *linearQueue)
 {
     if (linearQueue->length == 0) {
@@ -23,7 +23,7 @@ bool check_queue_empty(Queue *linearQueue)
     return false;
 }
 
-// ÅĞÂú
+// åˆ¤æ»¡
 bool check_queue_full(Queue *linearQueue)
 {
     if (linearQueue->head == linearQueue->tail) {
@@ -32,7 +32,7 @@ bool check_queue_full(Queue *linearQueue)
     return false;
 }
 
-// »ñÈ¡¶ÓÍ·ÔªËØ
+// è·å–é˜Ÿå¤´å…ƒç´ 
 int get_top_element(Queue *linearQueue, ElementType *head)
 {
     if (check_queue_empty(linearQueue)) {
@@ -42,7 +42,7 @@ int get_top_element(Queue *linearQueue, ElementType *head)
     return 0;
 }
 
-// Î²Èë¶Ó
+// å°¾å…¥é˜Ÿ
 int push_element(Queue *linearQueue, ElementType data)
 {
     if (check_queue_full(linearQueue)) {
@@ -53,7 +53,7 @@ int push_element(Queue *linearQueue, ElementType data)
     return 0;
 }
 
-// Í·³ö¶Ó
+// å¤´å‡ºé˜Ÿ
 int pop_element(Queue *linearQueue, ElementType *head)
 {
     if (check_queue_empty(linearQueue)) {

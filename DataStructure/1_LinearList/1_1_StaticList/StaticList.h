@@ -18,7 +18,15 @@ typedef struct SqListStruct
 SqList* init_list();
 void destroy_list(SqList **sqList);
 bool check_list_empty(SqList *sqList);
+bool check_list_full(SqList *sqList);
+int insert_element(SqList *sqList, ElementType data);
+int delete_element(SqList *sqList, int pos);
+int search_by_position(SqList *sqList, int pos, ElementType *data);
+int search_by_value(SqList *sqList, ElementType data, int *pos);
+int expand_list(SqList *sqList, int length);
 
 int get_list_length(SqList *sqList);
+void print_list(SqList *sqList);
+int get_list_size(SqList *sqList);
 
 #endif // STATICLIST_H_INCLUDED

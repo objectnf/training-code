@@ -2,7 +2,7 @@
 
 SqList* init_list()
 {
-   ElementType *listData = new ElementType[INITSIZE];
+   ElementType *listData = new ElementType[INITSIZE]{0};
    SqList *newList = new SqList{listData, INITSIZE, 0};
    return newList;
 }
@@ -12,6 +12,24 @@ void destroy_list(SqList **sqList)
     delete (*sqList)->data;
     delete *sqList;
     return;
+}
+
+// 判空
+bool check_list_empty(SqList *sqList)
+{
+    if (sqList->length) {
+        return false;
+    }
+    return true;
+}
+
+// 判满
+bool check_list_full(SqList *sqList)
+{
+    if(sqList->length == sqList->size) {
+        return true;
+    }
+    return false;
 }
 
 // 插入
@@ -64,36 +82,22 @@ int search_by_value(SqList *sqList, ElementType data, int *pos)
     return 1;
 }
 
-// 长度扩展
+// 容量扩展
 int expand_list(SqList *sqList, int length)
 {
-    // 指定长度小于数据长度
+    // 指定容量小于数据长度
     if (length < sqList->length) {
         return 1;
     }
 
-    ElementType *newData = new ElementType[length];
+    ElementType *newData = new ElementType[length]{0};
     // 考试要求：不使用std::copy
     // std::copy(sqList->data, (sqList->data) + sqList->length, newData);
-
-}
-
-// 判空
-bool check_list_empty(SqList *sqList)
-{
-    if (sqList->length) {
-        return false;
-    }
-    return true;
-}
-
-// 判满
-bool check_list_full(SqList *sqList)
-{
-    if(sqList->length == sqList->size) {
-        return true;
-    }
-    return false;
+    memcpy(newData, sqList->data, (sqList->length) * sizeof(ElementType));
+    delete sqList->data;
+    sqList->data = newData;
+    sqList->size = length;
+    return 0;
 }
 
 // 非标准：求表长
@@ -110,4 +114,10 @@ void print_list(SqList *sqList)
     }
     std::cout << std::endl;
     return;
+}
+
+// 非标准：求表容量
+int get_list_size(SqList *sqList)
+{
+    return sqList->size;
 }

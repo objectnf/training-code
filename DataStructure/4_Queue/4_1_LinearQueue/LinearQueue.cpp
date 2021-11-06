@@ -37,7 +37,7 @@ bool check_queue_full(Queue *linearQueue)
 int get_head_element(Queue *linearQueue, ElementType *head)
 {
     if (check_queue_empty(linearQueue)) {
-        return -1;
+        return 1;
     }
     *head = linearQueue->data[linearQueue->head];
     return 0;
@@ -47,11 +47,11 @@ int get_head_element(Queue *linearQueue, ElementType *head)
 int push_element(Queue *linearQueue, ElementType data)
 {
     if (check_queue_full(linearQueue)) {
-        return -1;
+        return 1;
     }
     linearQueue->data[linearQueue->tail] = data;
     linearQueue->tail = (linearQueue->tail + 1) % MAX_QUEUE_SIZE;
-    linearQueue->length ++;
+    linearQueue->length++;
     return 0;
 }
 
@@ -59,11 +59,11 @@ int push_element(Queue *linearQueue, ElementType data)
 int pop_element(Queue *linearQueue, ElementType *head)
 {
     if (check_queue_empty(linearQueue)) {
-        return -1;
+        return 1;
     }
     *head = linearQueue->data[linearQueue->head];
     linearQueue->head = (linearQueue->head + 1) % MAX_QUEUE_SIZE;
-    linearQueue->length --;
+    linearQueue->length--;
     return 0;
 }
 

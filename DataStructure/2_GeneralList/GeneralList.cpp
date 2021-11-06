@@ -1,14 +1,14 @@
 #include "GeneralList.h"
 
-// °´Ò»°ã¿¼ÊÔÒªÇó£¬ºöÂÔconst¡¢const_cast¡¢Òì³£´¦ÀíµÈ£¬ÓĞĞèÇó¿É×ÔĞĞÌí¼Ó
-// ´´½¨
+// æŒ‰ä¸€èˆ¬è€ƒè¯•è¦æ±‚ï¼Œå¿½ç•¥constã€const_castã€å¼‚å¸¸å¤„ç†ç­‰ï¼Œæœ‰éœ€æ±‚å¯è‡ªè¡Œæ·»åŠ 
+// åˆ›å»º
 void construct_list(ListType **gList)
 {
     *gList = new ListType{0, nullptr};
     return;
 }
 
-// ÅĞ¿Õ
+// åˆ¤ç©º
 bool check_list_empty(ListType *gList)
 {
     if (gList->length == 0) {
@@ -17,50 +17,50 @@ bool check_list_empty(ListType *gList)
     return false;
 }
 
-// Ïú»Ù
+// é”€æ¯
 void destroy_list(ListType **gList)
 {
     delete *gList;
     return;
 }
 
-// Çó³¤¶È
+// æ±‚é•¿åº¦
 int get_list_length(ListType *gList)
 {
     return gList->length;
 }
 
-// ´Ó±íÍ·²åÈë
+// ä»è¡¨å¤´æ’å…¥
 void add_element_to_head(ListType *gList, int isAtom, void *nodeData)
 {
     NodeType *node = new NodeType();
-    // ¼ÓÔ­×ÓÏî£¿
+    // åŠ åŸå­é¡¹ï¼Ÿ
     if (isAtom) {
         node->type = false;
         node->nodeContent.atom = *(int *)nodeData;
     }
-    // ¼Ó×Ó±í£¿
+    // åŠ å­è¡¨ï¼Ÿ
     else {
         node->type = true;
         node->nodeContent.nodePointer = (NodeType *)nodeData;
     }
     node->next = gList->head;
     gList->head = node;
-    gList->length ++;
+    gList->length++;
     return;
 }
 
-// È¡±íÍ·
+// å–è¡¨å¤´
 NodeType* get_list_head(ListType *gList)
 {
     return gList->head;
 }
 
-// È¡±íÎ²
+// å–è¡¨å°¾
 ListType* get_list_tail(ListType *gList)
 {
     ListType *newList = new ListType{0, nullptr};
-    // ¿Õ±í£¿
+    // ç©ºè¡¨ï¼Ÿ
     if (check_list_empty(gList)) {
         return newList;
     }
@@ -69,12 +69,12 @@ ListType* get_list_tail(ListType *gList)
     return newList;
 }
 
-// ´Ó±íÍ·É¾³ı
+// ä»è¡¨å¤´åˆ é™¤
 void delete_element_from_head();
 
-// ÇóÉî¶È
+// æ±‚æ·±åº¦
 int get_list_depth();
 
-// ±éÀú
+// éå†
 void traverse_list();
 

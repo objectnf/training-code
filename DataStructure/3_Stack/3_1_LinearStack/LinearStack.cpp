@@ -1,20 +1,20 @@
 #include "LinearStack.h"
 
-// ´´½¨
+// åˆ›å»º
 Stack* construct_stack()
 {
     Stack *linearStack = new Stack{{0}, 0};
     return linearStack;
 }
 
-// Ïú»Ù
+// é”€æ¯
 void destroy_stack(Stack **linearStack)
 {
     delete *linearStack;
     return;
 }
 
-// ÅĞ¿Õ
+// åˆ¤ç©º
 bool check_stack_empty(Stack *linearStack)
 {
     if (linearStack->top) {
@@ -23,7 +23,7 @@ bool check_stack_empty(Stack *linearStack)
     return true;
 }
 
-// ÅĞÂú
+// åˆ¤æ»¡
 bool check_stack_full(Stack *linearStack)
 {
     if (linearStack->top == MAX_STACK_SIZE - 1) {
@@ -32,34 +32,34 @@ bool check_stack_full(Stack *linearStack)
     return false;
 }
 
-// »ñÈ¡Õ»¶¥ÔªËØ
+// è·å–æ ˆé¡¶å…ƒç´ 
 int get_top_element(Stack *linearStack, ElementType *top)
 {
     if (check_stack_empty(linearStack)) {
-        return -1;
+        return 1;
     }
     *top = linearStack->data[linearStack->top - 1];
     return 0;
 }
 
-// ÈëÕ»
+// å…¥æ ˆ
 int push_element(Stack *linearStack, ElementType data)
 {
     if (check_stack_full(linearStack)) {
-        return -1;
+        return 1;
     }
     linearStack->data[linearStack->top] = data;
-    linearStack->top ++;
+    linearStack->top++;
     return 0;
 }
 
-// ³öÕ»£¬°´¿¼ÊÔÒªÇó·µ»ØÕ»¶¥ÔªËØ
+// å‡ºæ ˆï¼ŒæŒ‰è€ƒè¯•è¦æ±‚è¿”å›æ ˆé¡¶å…ƒç´ 
 int pop_element(Stack *linearStack, ElementType *top)
 {
     if (check_stack_empty(linearStack)) {
-        return -1;
+        return 1;
     }
-    linearStack->top --;
+    linearStack->top--;
     *top = linearStack->data[linearStack->top];
     return 0;
 }

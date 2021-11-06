@@ -19,8 +19,10 @@ Queue* construct_queue();
 void destroy_queue(Queue **linearQueue);
 bool check_queue_empty(Queue *linearQueue);
 bool check_queue_full(Queue *linearQueue);
-int get_top_element(Queue *linearQueue, ElementType *top);
+int get_head_element(Queue *linearQueue, ElementType *head);
 int push_element(Queue *linearQueue, ElementType data);
-int pop_element(Queue *linearQueue, ElementType *top);
+int pop_element(Queue *linearQueue, ElementType *head);
+
+int get_queue_length(Queue *linearQueue);
 
 #endif // LINEARQUEUE_H_INCLUDED

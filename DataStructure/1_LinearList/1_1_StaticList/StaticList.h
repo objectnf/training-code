@@ -2,6 +2,8 @@
 #define STATICLIST_H_INCLUDED
 
 #include <iostream>
+// #include <algorithm>
+#include <cstring>
 
 #define INITSIZE 10
 

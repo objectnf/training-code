@@ -26,15 +26,24 @@ int insert_element(SqList *sqList, ElementType data)
     return 0;
 }
 
-// 删除
-int delete_element()
+// 删除，pos为下标，下同
+int delete_element(SqList *sqList, int pos)
 {
-
+    // pos不合法
+    if (pos < 0 || pos >= sqList->length) {
+        return 1;
+    }
+    sqList->length--;
+    for(int i = pos; i < sqList->length; i++) {
+        sqList->data[i + 1] = sqList->data[i];
+    }
+    return 0;
 }
 
 // 按位查找
 int search_by_position(SqList *sqList, int pos, ElementType *data)
 {
+    // pos不合法
     if (pos < 0 || pos >= sqList->length) {
         return 1;
     }
@@ -56,8 +65,16 @@ int search_by_value(SqList *sqList, ElementType data, int *pos)
 }
 
 // 长度扩展
-int expand_list()
+int expand_list(SqList *sqList, int length)
 {
+    // 指定长度小于数据长度
+    if (length < sqList->length) {
+        return 1;
+    }
+
+    ElementType *newData = new ElementType[length];
+    // 考试要求：不使用std::copy
+    // std::copy(sqList->data, (sqList->data) + sqList->length, newData);
 
 }
 
@@ -86,7 +103,11 @@ int get_list_length(SqList *sqList)
 }
 
 // 非标准：遍历输出
-void print_list()
+void print_list(SqList *sqList)
 {
-
+    for (int i = 0; i < sqList->length; i++) {
+        std::cout << sqList->data[i] << " ";
+    }
+    std::cout << std::endl;
+    return;
 }

@@ -15,6 +15,8 @@ typedef struct SqListStruct
 
 SqList* init_list();
 void destroy_list(SqList **sqList);
+bool check_list_empty(SqList *sqList);
 
+int get_list_length(SqList *sqList);
 
 #endif // STATICLIST_H_INCLUDED

@@ -1,5 +1,6 @@
 #include "StaticList.h"
 
+// 创建
 SqList* init_list()
 {
    ElementType *listData = new ElementType[INITSIZE]{0};
@@ -7,6 +8,7 @@ SqList* init_list()
    return newList;
 }
 
+// 销毁
 void destroy_list(SqList **sqList)
 {
     delete (*sqList)->data;

@@ -33,7 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="StaticList.cpp" />
-		<Unit filename="StaticList.hpp" />
+		<Unit filename="StaticList.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

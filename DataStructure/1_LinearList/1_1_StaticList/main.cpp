@@ -1,18 +1,16 @@
-#include "StaticList.hpp"
+#include "StaticList.h"
 
 using namespace std;
 
-int main(void)
+int main()
 {
-    SqList L;
-    cout<<"初始化可变静态链表L"<<endl;
-    InitList(L);
+    SqList *L = init_list();
 
 
 
 
 
-    cout<<"销毁可变静态链表L"<<endl;
-    DestroyList(L);
+    cout<<"閿�姣佸彲鍙橀潤鎬侀摼琛↙"<<endl;
+    destroy_list(&L);
     return 0;
 }

@@ -1,8 +1,21 @@
 # depslib dependency file v1.0
-1634230412 source:d:\编程与比赛\training-code\datastructure\1_linearlist\1_staticlist\staticlist.cpp
+1634230412 source:d:\training-code\datastructure\1_linearlist\1_staticlist\staticlist.cpp
 	"StaticList.hpp"
 
-1634229714 d:\编程与比赛\training-code\datastructure\1_linearlist\1_staticlist\staticlist.hpp
+1634230412 t.hpp"
+
+1634229714 d:\training-code\datastructure\1_linearlist\1_staticlist\staticlist.h
 	<iostream>
 	<cstdlib>
+
+1634229714 
+
+1636188132 source:/media/objectnotfound/D4D0D9B29AD0CFD6/training-code/DataStructure/1_LinearList/1_1_StaticList/main.cpp
+	"StaticList.h"
+
+1636188123 /media/objectnotfound/D4D0D9B29AD0CFD6/training-code/DataStructure/1_LinearList/1_1_StaticList/StaticList.h
+	<iostream>
+
+1636188331 source:/media/objectnotfound/D4D0D9B29AD0CFD6/training-code/DataStructure/1_LinearList/1_1_StaticList/StaticList.cpp
+	"StaticList.h"
 

@@ -1,6 +1,8 @@
 #ifndef LINKLIST_H_INCLUDED
 #define LINKLIST_H_INCLUDED
 
+#include <iostream>
+
 typedef int ElementType;
 
 /* 普通结点结构 */
@@ -24,8 +26,24 @@ LinkList;
 LinkList* construct_list();
 void destroy_list(LinkList **L);
 void insert_from_head(LinkList *L, ElementType data);
+void insert_from_tail(LinkList *L, ElementType data);
+int get_list_length(LinkList *L);
+void traverse_list(LinkList *L);
 
 /* 非标准方法 */
 int get_list_length_direct(LinkList *L);
+
+/* 非标准：遍历模板 */
+template <typename Func>
+Func for_each_list_element(LinkList *L, Func f)
+{
+    Node *currentNode(L->next);
+    while (currentNode) {
+        f(currentNode);
+        currentNode = currentNode->next;
+    }
+    return f;
+}
+
 
 #endif // LINKLIST_H_INCLUDED

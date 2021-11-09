@@ -96,8 +96,16 @@ void traverse_list(LinkList *L)
 
 
 /* 指定位置插入，位置从1开始，下同 */
+void insert_by_position(LinkList *L, int pos)
+{
+
+}
 
 /* 指定位置删除 */
+void delete_by_position(LinkList *L, int pos)
+{
+
+}
 
 /* 按位置查找 */
 Node* get_element_by_position(LinkList *L, int pos)
@@ -135,6 +143,10 @@ Node* get_element_by_value(LinkList *L, ElementType data)
 }
 
 /* 在指定结点前插入 */
+void insert_before_node()
+{
+
+}
 
 /* 在指定结点后插入 */
 void insert_after_node(Node *node, ElementType data)

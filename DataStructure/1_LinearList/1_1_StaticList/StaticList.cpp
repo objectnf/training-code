@@ -83,7 +83,7 @@ int delete_element(SqList *sqList, int pos)
 /* 按位查找 */
 int search_by_position(SqList *sqList, int pos, ElementType *data)
 {
-    if (sqList == nullptr) {
+    if (sqList == nullptr || data == nullptr) {
         return 1;
     }
 
@@ -99,7 +99,7 @@ int search_by_position(SqList *sqList, int pos, ElementType *data)
 /* 按值查找 */
 int search_by_value(SqList *sqList, ElementType data, int *pos)
 {
-    if (sqList == nullptr) {
+    if (sqList == nullptr || pos == nullptr) {
         return 1;
     }
 

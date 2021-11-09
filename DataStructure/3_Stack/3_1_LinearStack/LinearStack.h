@@ -13,6 +13,7 @@ typedef struct StackStruct
 }
 Stack;
 
+/* 标准操作 */
 Stack* construct_stack();
 void destroy_stack(Stack **linearStack);
 bool check_stack_empty(Stack *linearStack);

@@ -15,6 +15,7 @@ typedef struct SqListStruct
     int length;
 } SqList;
 
+/* 标准操作 */
 SqList* init_list();
 void destroy_list(SqList **sqList);
 bool check_list_empty(SqList *sqList);
@@ -25,6 +26,7 @@ int search_by_position(SqList *sqList, int pos, ElementType *data);
 int search_by_value(SqList *sqList, ElementType data, int *pos);
 int expand_list(SqList *sqList, int length);
 
+/* 非标准操作 */
 int get_list_length(SqList *sqList);
 void print_list(SqList *sqList);
 int get_list_size(SqList *sqList);

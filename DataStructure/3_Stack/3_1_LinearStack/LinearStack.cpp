@@ -1,40 +1,56 @@
 #include "LinearStack.h"
 
-// 创建
+/* 创建 */
 Stack* construct_stack()
 {
     Stack *linearStack = new Stack{{0}, 0};
     return linearStack;
 }
 
-// 销毁
+/* 销毁 */
 void destroy_stack(Stack **linearStack)
 {
+    if (linearStack == nullptr || *linearStack == nullptr) {
+        return;
+    }
+
     delete *linearStack;
     return;
 }
 
-// 判空
+/* 判空 */
 bool check_stack_empty(Stack *linearStack)
 {
+    if (linearStack == nullptr) {
+        return true;
+    }
+
     if (linearStack->top) {
         return false;
     }
     return true;
 }
 
-// 判满
+/* 判满 */
 bool check_stack_full(Stack *linearStack)
 {
+    if (linearStack == nullptr) {
+        return false;
+    }
+
     if (linearStack->top == MAX_STACK_SIZE - 1) {
         return true;
     }
     return false;
 }
 
-// 获取栈顶元素
+/* 获取栈顶元素 */
 int get_top_element(Stack *linearStack, ElementType *top)
 {
+    if (linearStack == nullptr || top == nullptr) {
+        return 1;
+    }
+
     if (check_stack_empty(linearStack)) {
         return 1;
     }
@@ -42,9 +58,13 @@ int get_top_element(Stack *linearStack, ElementType *top)
     return 0;
 }
 
-// 入栈
+/* 入栈 */
 int push_element(Stack *linearStack, ElementType data)
 {
+    if (linearStack == nullptr) {
+        return 1;
+    }
+
     if (check_stack_full(linearStack)) {
         return 1;
     }
@@ -53,9 +73,13 @@ int push_element(Stack *linearStack, ElementType data)
     return 0;
 }
 
-// 出栈，按考试要求返回栈顶元素
+/* 出栈，按考试要求返回栈顶元素 */
 int pop_element(Stack *linearStack, ElementType *top)
 {
+    if (linearStack == nullptr || top == nullptr) {
+        return 1;
+    }
+
     if (check_stack_empty(linearStack)) {
         return 1;
     }

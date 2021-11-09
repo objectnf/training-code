@@ -23,6 +23,10 @@ int main()
     for_each_list_element(L, [&](Node* currentNode) { listLength ++; cout << currentNode->data << " "; });
     cout << endl << listLength << endl;
 
+    ElementType nodeData = 0;
+    get_element_by_position(L, 3, &nodeData);
+    cout << "nodeData = " << nodeData << endl;
+
     destroy_list(&L);
     return 0;
 }

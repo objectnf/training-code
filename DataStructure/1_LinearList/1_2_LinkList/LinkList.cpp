@@ -76,3 +76,35 @@ void traverse_list(LinkList *L)
     return;
 }
 
+
+/* 指定位置插入，位置从1开始，下同 */
+
+/* 指定位置删除 */
+
+/* 按位置查找 */
+int get_element_by_position(LinkList *L, int pos, ElementType *data)
+{
+    Node *currentNode = L->next;
+    for(int i=2; i<=pos; i++) {
+        currentNode = currentNode->next;
+        if(currentNode == nullptr) {
+            break;
+        }
+    }
+    if (currentNode == nullptr) {
+        return 1;
+    }
+    else {
+        *data = currentNode->data;
+        return 0;
+    }
+}
+
+/* 按值查找 */
+
+/* 在指定结点前插入 */
+
+/* 在指定结点后插入 */
+
+/* 删除指定结点 */
+

@@ -29,6 +29,7 @@ void insert_from_head(LinkList *L, ElementType data);
 void insert_from_tail(LinkList *L, ElementType data);
 int get_list_length(LinkList *L);
 void traverse_list(LinkList *L);
+int get_element_by_position(LinkList *L, int pos, ElementType *data);
 
 /* 非标准方法 */
 int get_list_length_direct(LinkList *L);
@@ -44,6 +45,5 @@ Func for_each_list_element(LinkList *L, Func f)
     }
     return f;
 }
-
 
 #endif // LINKLIST_H_INCLUDED

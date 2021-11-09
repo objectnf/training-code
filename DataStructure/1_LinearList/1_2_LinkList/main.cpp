@@ -23,9 +23,31 @@ int main()
     for_each_list_element(L, [&](Node* currentNode) { listLength ++; cout << currentNode->data << " "; });
     cout << endl << listLength << endl;
 
-    ElementType nodeData = 0;
-    get_element_by_position(L, 3, &nodeData);
-    cout << "nodeData = " << nodeData << endl;
+    Node *nodeData = nullptr;
+    nodeData = get_element_by_position(L, 3);
+    if (nodeData == nullptr) {
+        cout << "结点不存在" << endl;
+    }
+    else {
+        cout << "nodeData.data = " << nodeData->data << endl;
+    }
+
+    ElementType searchData = 100;
+    nodeData = nullptr;
+    nodeData = get_element_by_value(L, searchData);
+    if (nodeData == nullptr) {
+        cout << "结点不存在" << endl;
+    }
+    else {
+        cout << "nodeData.data = " << nodeData->data << endl;
+    }
+
+    insertData = 250;
+    insert_after_node(nodeData, insertData);
+    traverse_list(L);
+
+    delete_node(nodeData);
+    traverse_list(L);
 
     destroy_list(&L);
     return 0;

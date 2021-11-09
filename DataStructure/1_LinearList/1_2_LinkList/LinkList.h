@@ -29,7 +29,10 @@ void insert_from_head(LinkList *L, ElementType data);
 void insert_from_tail(LinkList *L, ElementType data);
 int get_list_length(LinkList *L);
 void traverse_list(LinkList *L);
-int get_element_by_position(LinkList *L, int pos, ElementType *data);
+Node* get_element_by_position(LinkList *L, int pos);
+Node* get_element_by_value(LinkList *L, ElementType data);
+void insert_after_node(Node *node, ElementType data);
+void delete_node(Node *node);
 
 /* 非标准方法 */
 int get_list_length_direct(LinkList *L);
